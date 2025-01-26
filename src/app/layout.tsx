@@ -1,20 +1,15 @@
-import "./globals.css"
-import type { Metadata } from "next"
+"use client";
 
-export const metadata: Metadata = {
-  title: "Movie App",
-  description: "Descubra filmes populares",
-}
+import "./globals.ts";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="pt-BR">
       <body>{children}</body>
     </html>
-  )
+  );
 }
-

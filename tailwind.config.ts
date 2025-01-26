@@ -1,15 +1,20 @@
-import tailwindcssAnimate from "tailwindcss-animate";
+import type { Config } from "tailwindcss"
 
-const tailwindConfig = {
-  darkMode: ["class"],
+const config: Config = {
   content: [
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "app/**/*.{ts,tsx}",
-    "components/**/*.{ts,tsx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -53,7 +58,8 @@ const tailwindConfig = {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
-};
+  plugins: [],
+}
 
-export default tailwindConfig;
+export default config
+

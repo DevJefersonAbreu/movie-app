@@ -1,8 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { Header } from "../components/header"
-import MovieList from "../components/movieList"
+import { Header } from "../components/header/header"
+import MovieList from "../components/movielList/movieList"
+import { PageContainer, MainContent } from "./styles"
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<number | null>(null)
@@ -12,12 +13,12 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <PageContainer>
       <Header onCategorySelect={handleCategorySelect} />
-      <main className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <MainContent>
         <MovieList selectedCategory={selectedCategory} />
-      </main>
-    </div>
+      </MainContent>
+    </PageContainer>
   )
 }
 
